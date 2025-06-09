@@ -30,7 +30,6 @@ export default function AboutChapter({ data }: AboutChapterProps) {
         {/* Heading and Subtext */}
         <div className="text-center space-y-4">
           <MainHeading text="Who We Are" />
-          <br/>
           <Subtitle text="A glimpse into the soul of Travelling Monk 24" />
         </div>
 
@@ -63,7 +62,7 @@ export default function AboutChapter({ data }: AboutChapterProps) {
               ref={ref}
               className={`flex flex-col ${
                 index % 2 === 1 ? "md:flex-row-reverse" : "md:flex-row"
-              } items-center gap-10`}
+              } items-center gap-10 md:gap-16 lg:gap-20`}
             >
               {/* Image reveal */}
               <motion.div
@@ -90,9 +89,9 @@ export default function AboutChapter({ data }: AboutChapterProps) {
               >
                 <Card className="bg-transparent shadow-none border-none">
                   <CardContent className="p-0 space-y-4">
-                    <div className="flex items-center gap-3 text-blue-500 w-6 h-6">
+                    {/* <div className="flex items-center gap-3 text-blue-500 w-6 h-6">
                       {icon}
-                    </div>
+                    </div> */}
 
                     <HeroHeading text={title} />
 

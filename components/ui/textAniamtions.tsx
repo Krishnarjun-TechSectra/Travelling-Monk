@@ -27,7 +27,7 @@ export const HeroHeading = ({ text }: { text: string }) => {
 export const ParagraphFadeBold = ({ text }: { text: string }) => {
   return (
     <motion.p
-      className=" text-gray-800 font-semibold not-only:text-lg md:text-xl leading-relaxed "
+      className=" paragraph text-justify text-muted-foreground leading-8"
       initial={{ x: -100, opacity: 0 }}
       whileInView={{ x: 0, opacity: 1 }}
       transition={{ duration: 1.2, ease: "easeOut" }}
@@ -40,7 +40,7 @@ export const ParagraphFadeBold = ({ text }: { text: string }) => {
 export const Subtitle = ({ text }: { text: string }) => {
   return (
     <motion.span
-      className="text-lg md:text-xl text-gray-600 font-semibold leading-relaxed "
+      className="subheading "
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       transition={{ x: 0, duration: 2, delay: 2, ease: "easeOut" }}
@@ -54,7 +54,7 @@ export const MainHeading = ({ text }: { text: string }) => {
   const letters = text.split("");
 
   return (
-    <h1 className="text-3xl md:text-5xl font-extrabold text-gray-900">
+    <h1 className="heading">
       {letters.map((char, index) => (
         <motion.span
           key={index}
