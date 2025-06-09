@@ -19,7 +19,7 @@ import { masonryGridImages } from "@/data/masonryGridImages";
 
 export default function Home() {
   return (
-    <Loader>
+    // <Loader>
       <div className="home-gradient">
         <Navbar />
         <HeroCarousel />
@@ -54,6 +54,6 @@ export default function Home() {
 
         <Footer />
       </div>
-    </Loader>
+    // </Loader>
   );
 }
