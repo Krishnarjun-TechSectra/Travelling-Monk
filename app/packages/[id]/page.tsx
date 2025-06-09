@@ -5,6 +5,7 @@ import { PackageImage } from "@/components/packages/allPackages";
 import PageLayout from "@/components/PageLayout";
 import { Badge } from "@/components/ui/badge";
 import MarginedComponent from "@/components/ui/marginedComponent";
+import { MainHeading } from "@/components/ui/textAniamtions";
 import { detailedPackages } from "@/data/package";
 import { CalendarDays, MapPin, Star } from "lucide-react";
 import dynamic from "next/dynamic";
@@ -71,10 +72,8 @@ export default function PackagePage() {
 
           {/* Highlights */}
           <section>
-            <h2 className="heading text-center flex items-center justify-center gap-3 mb-6">
-              ⭐ Highlights
-            </h2>
-            <div className="grid sm:grid-cols-2 gap-4 list-disc list-inside text-gray-800">
+            <MainHeading text="⭐ Highlights" />
+            <div className="grid sm:grid-cols-2 gap-4 list-disc list-inside text-gray-800 mt-10">
               {selectedPackage.highlights.map((item, i) => (
                 <PackageImage key={i} image={'https://d26dp53kz39178.cloudfront.net/media/uploads/products/Jeep_Ride_Safari-3_TAP1A7o.jpg'} title={item} imageHeight="20rem"/>
               ))}
@@ -83,10 +82,8 @@ export default function PackagePage() {
 
           {/* Itinerary */}
           <section>
-            <h2 className="subheading text-center mb-6">
-              Day-wise Itinerary
-            </h2>
-            <div className="space-y-6">
+            <MainHeading text="Day Wise Itenary" />
+            <div className="space-y-6 mt-10">
               {selectedPackage.itinerary.map((item, idx) => (
                 <div key={idx} className="border-l-4 border-blue-500 pl-4">
                   <h3 className="text-xl font-semibold text-gray-900">
