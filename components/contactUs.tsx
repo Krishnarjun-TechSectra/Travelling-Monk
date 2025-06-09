@@ -8,6 +8,7 @@ import { Input } from "./ui/input";
 import { Label } from "./ui/label";
 import { Textarea } from "./ui/textarea";
 import { Button } from "./ui/button";
+import { MainHeading } from "./ui/textAniamtions";
 
 const ContactUs = () => {
   
@@ -25,7 +26,7 @@ const ContactUs = () => {
 
       {/* Right: Contact Form */}
       <div className="space-y-4">
-        <h2 className="heading">Contact Us</h2>
+       <MainHeading text="Contact Us" />
         <p className="text-muted-foreground">
           We'd love to hear from you! Drop your name and message below.
         </p>

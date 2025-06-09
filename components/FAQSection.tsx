@@ -2,6 +2,7 @@
 
 import * as Accordion from "@radix-ui/react-accordion";
 import { ChevronDown } from "lucide-react";
+import { MainHeading } from "./ui/textAniamtions";
 
 type Faq = {
   question: string;
@@ -15,8 +16,8 @@ interface FaqSectionProps {
 export function FaqSection({ faqs }: FaqSectionProps) {
   return (
     <section className="section-margin">
-      <h2 className="mb-10 heading text-center">Frequently Asked Questions</h2>
-      <Accordion.Root type="multiple" defaultValue={[]} className="space-y-4">
+      <MainHeading text="Frequently Asked Questions" />
+      <Accordion.Root type="multiple" defaultValue={[]} className="space-y-4 mt-10">
         {faqs.map(({ question, answer }, i) => (
           <Accordion.Item
             value={`item-${i}`}

@@ -27,7 +27,7 @@ const Navbar = () => {
             <Link
               key={i}
               href={href}
-              className="text-sm font-medium hover:underline"
+              className="text-sm font-medium hover:underline cursor-pointer"
             >
               {title}
             </Link>
