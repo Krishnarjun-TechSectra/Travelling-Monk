@@ -23,16 +23,16 @@ export default function MasonryGrid({ images }: { images: ImageCard[] }) {
           >
             <Link
               href={img.href || "#"}
-              className="group relative block overflow-hidden focus:outline-none rounded-lg"
+              className="group relative block overflow-hidden focus:outline-none "
             >
-              <div className="relative rounded-lg overflow-hidden">
+              <div className="relative  overflow-hidden">
                 <img
                   src={img.src}
                   alt={img.title}
-                  className="w-full h-full object-cover rounded-lg transition-transform duration-300 ease-in-out group-hover:scale-105"
+                  className="w-full h-full object-cover  transition-transform duration-300 ease-in-out group-hover:scale-105"
                 />
                 {/* Snappy overlay */}
-                <div className="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity duration-200 ease-out pointer-events-none rounded-lg z-10" />
+                <div className="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity duration-200 ease-out pointer-events-none  z-10" />
               </div>
               {/* Title stays clear and on top */}
               <div className="absolute bottom-0 left-0 right-0 p-2 sm:p-4 z-20">

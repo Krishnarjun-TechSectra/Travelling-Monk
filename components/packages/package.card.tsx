@@ -13,13 +13,13 @@ export default function PackageCard({
   image,
 }: PackageCardProps) {
   return (
-    <Card className="w-full max-w-xl min-w-sm py-0">
+    <Card className="w-full max-w-xl min-w-sm py-0 rounded-none border-none shadow-none">
       <CardContent className="p-4 flex flex-col items-center text-center">
-        <div className="w-full h-48 bg-gray-200 flex items-center justify-center rounded-md mb-4">
+        <div className="w-full h-48 bg-gray-200 flex items-center justify-center  mb-4">
           <img
             src={image}
             alt="Placeholder Image"
-            className="w-full h-full object-cover rounded-md"
+            className="w-full h-full object-cover "
           />
         </div>
         <h3 className="text-lg font-semibold mb-2">{title}</h3>

@@ -20,17 +20,20 @@ import { masonryGridImages } from "@/data/masonryGridImages";
 export default function Home() {
   return (
     // <Loader>
-      <div className="home-gradient">
-        <Navbar />
-        <HeroCarousel />
+    <div className="home-gradient">
+      <Navbar />
+      <HeroCarousel />
 
+      <MarginedComponent>
+        <AboutSection data={aboutUsData} />
+
+        <RevealOnScroll animationType="fade-left">
+          <MasonryCardsOnImages images={masonryGridImages} />
+        </RevealOnScroll>
+      </MarginedComponent>
+
+      <div className="bg-[#edf4ed] py-4">
         <MarginedComponent>
-          <AboutSection data={aboutUsData} />
-
-          <RevealOnScroll animationType="fade-left">
-            <MasonryCardsOnImages images={masonryGridImages} />
-          </RevealOnScroll>
-
           <RevealOnScroll animationType="zoom-in">
             <PackagesSection />
           </RevealOnScroll>
@@ -38,22 +41,25 @@ export default function Home() {
           <RevealOnScroll animationType="fade-up">
             <EmpowerSection />
           </RevealOnScroll>
-
-          <RevealOnScroll animationType="fade-left">
-            <Commitment />
-          </RevealOnScroll>
-
-          <RevealOnScroll animationType="zoom-in">
-            <ContactUs />
-          </RevealOnScroll>
-
-          <RevealOnScroll animationType="fade-up">
-            <FaqSection faqs={FAQData} />
-          </RevealOnScroll>
         </MarginedComponent>
-
-        <Footer />
       </div>
+
+      <MarginedComponent>
+        <RevealOnScroll animationType="fade-left">
+          <Commitment />
+        </RevealOnScroll>
+
+        <RevealOnScroll animationType="zoom-in">
+          <ContactUs />
+        </RevealOnScroll>
+
+        <RevealOnScroll animationType="fade-up">
+          <FaqSection faqs={FAQData} />
+        </RevealOnScroll>
+      </MarginedComponent>
+
+      <Footer />
+    </div>
     // </Loader>
   );
 }

@@ -71,13 +71,15 @@ export default function AboutChapter({ data }: AboutChapterProps) {
                 initial="hidden"
                 animate={isInView ? "visible" : "hidden"}
               >
-                <Image
-                  src={imageSrc}
-                  alt={imageAlt}
-                  width={800}
-                  height={500}
-                  className="object-cover rounded-2xl shadow-xl"
-                />
+                <div className="group relative overflow-hidden w-full h-[300px]">
+                  <Image
+                    src={imageSrc}
+                    alt={imageAlt}
+                    width={800}
+                    height={500}
+                    className="object-cover w-full h-full transition-transform duration-300 ease-out group-hover:scale-110"
+                  />
+                </div>
               </motion.div>
 
               {/* Text reveal */}
