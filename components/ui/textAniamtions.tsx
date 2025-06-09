@@ -2,43 +2,38 @@
 
 import { motion } from "framer-motion";
 
-export const HeroHeading = ({ text }: { text: string }) => (
-  <motion.h1
-    initial={{ x: -100, opacity: 0 }}
-    whileInView={{ x: 0, opacity: 1 }}
-    transition={{ duration: 1.2, ease: "easeOut" }}
-    className="text-4xl md:text-5xl font-extrabold text-gray-900"
-  >
-    {text}
-  </motion.h1>
-);
-
-export const ParagraphFadeBold = ({ text }: { text: string }) => {
-  const words = text.split(" ");
+export const HeroHeading = ({ text }: { text: string }) => {
+  const letters = text.split("");
 
   return (
-    <p className="text-lg leading-relaxed flex flex-wrap font-semibold">
-      {words.map((word, index) => (
-        <span key={index} className="relative">
-          {/* Faded Skeleton (base layer) */}
-          <span className="text-gray-200">{word}</span>
-
-          {/* Typing effect (bold layer) */}
-          <motion.span
-            className="absolute top-0 left-0 text-gray-800 font-semibold"
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{
-              delay: index * 0.02,
-              duration: 0.1,
-              ease: "easeOut",
-            }}
-          >
-            {word}
-          </motion.span>
-        </span>
+    <h1 className="text-2xl md:text-3xl font-extrabold text-gray-900">
+      {letters.map((char, index) => (
+        <motion.span
+          key={index}
+          initial={{ opacity: 0, y: -10 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{
+            delay: index * 0.05,
+            duration: 0.3,
+            ease: "easeOut",
+          }}
+        >
+          {char === " " ? "\u00A0" : char}
+        </motion.span>
       ))}
-    </p>
+    </h1>
+  );
+};
+export const ParagraphFadeBold = ({ text }: { text: string }) => {
+  return (
+    <motion.p
+      className=" text-gray-800 font-semibold not-only:text-lg md:text-xl leading-relaxed "
+      initial={{ x: -100, opacity: 0 }}
+      whileInView={{ x: 0, opacity: 1 }}
+      transition={{ duration: 1.2, ease: "easeOut" }}
+    >
+      {text}
+    </motion.p>
   );
 };
 
@@ -48,9 +43,32 @@ export const Subtitle = ({ text }: { text: string }) => {
       className="text-lg md:text-xl text-gray-600 font-semibold leading-relaxed "
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
-      transition={{ x: 0, duration: 1.1, delay: 1, ease: "easeOut" }}
+      transition={{ x: 0, duration: 2, delay: 2, ease: "easeOut" }}
     >
       {text}
     </motion.span>
+  );
+};
+
+export const MainHeading = ({ text }: { text: string }) => {
+  const letters = text.split("");
+
+  return (
+    <h1 className="text-3xl md:text-5xl font-extrabold text-gray-900">
+      {letters.map((char, index) => (
+        <motion.span
+          key={index}
+          initial={{ opacity: 0, x:-20 ,y:-10}}
+          whileInView={{ opacity: 1, y: 0 ,x:0}}
+          transition={{
+            delay: index * 0.05,
+            duration: 0.6,
+            ease: "easeOut",
+          }}
+        >
+          {char === " " ? "\u00A0" : char}
+        </motion.span>
+      ))}
+    </h1>
   );
 };

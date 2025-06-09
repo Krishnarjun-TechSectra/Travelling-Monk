@@ -6,6 +6,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { useInView, motion } from "framer-motion";
 import {
   HeroHeading,
+  MainHeading,
   ParagraphFadeBold,
   Subtitle,
 } from "@/components/ui/textAniamtions"; // adjust the path as needed
@@ -28,7 +29,8 @@ export default function AboutChapter({ data }: AboutChapterProps) {
       <div className="max-w-6xl mx-auto space-y-20">
         {/* Heading and Subtext */}
         <div className="text-center space-y-4">
-          <HeroHeading text="Who We Are" />
+          <MainHeading text="Who We Are" />
+          <br/>
           <Subtitle text="A glimpse into the soul of Travelling Monk 24" />
         </div>
 
