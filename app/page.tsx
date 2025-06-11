@@ -27,9 +27,9 @@ export default function Home() {
       <MarginedComponent>
         <AboutSection data={aboutUsData} />
 
-        <RevealOnScroll animationType="fade-left">
+        {/* <RevealOnScroll animationType="fade-left">
           <MasonryCardsOnImages images={masonryGridImages} />
-        </RevealOnScroll>
+        </RevealOnScroll> */}
       </MarginedComponent>
 
       <div className="bg-[#edf4ed] py-4">
@@ -38,9 +38,9 @@ export default function Home() {
             <PackagesSection />
           </RevealOnScroll>
 
-          <RevealOnScroll animationType="fade-up">
+          {/* <RevealOnScroll animationType="fade-up">
             <EmpowerSection />
-          </RevealOnScroll>
+          </RevealOnScroll> */}
         </MarginedComponent>
       </div>
 
@@ -49,13 +49,15 @@ export default function Home() {
           <Commitment />
         </RevealOnScroll>
 
-        <RevealOnScroll animationType="zoom-in">
-          <ContactUs />
-        </RevealOnScroll>
-
+       
         <RevealOnScroll animationType="fade-up">
           <FaqSection faqs={FAQData} />
         </RevealOnScroll>
+
+         <RevealOnScroll animationType="zoom-in">
+          <ContactUs />
+        </RevealOnScroll>
+
       </MarginedComponent>
 
       <Footer />
