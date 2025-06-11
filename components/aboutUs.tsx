@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import Image from "next/image";
 import { Card, CardContent } from "@/components/ui/card";
 import { useInView, motion } from "framer-motion";
@@ -10,6 +10,7 @@ import {
   ParagraphFadeBold,
   Subtitle,
 } from "@/components/ui/textAniamtions"; // adjust the path as needed
+import BrushStrokeAnimation from "./ui/imageBrushStrokeAnim";
 
 interface Chapter {
   title: string;
@@ -24,6 +25,7 @@ interface AboutChapterProps {
 }
 
 export default function AboutChapter({ data }: AboutChapterProps) {
+  const [showImages, setShowImages] = useState(false);
   return (
     <section className="w-full px-4 section-margin text-gray-800" id="about">
       <div className="max-w-6xl mx-auto space-y-20">
@@ -72,13 +74,14 @@ export default function AboutChapter({ data }: AboutChapterProps) {
                 animate={isInView ? "visible" : "hidden"}
               >
                 <div className="group relative overflow-hidden w-full h-[300px]">
-                  <Image
+                   <BrushStrokeAnimation imageSrc={imageSrc} />
+                   {/* {showImages && (<Image
                     src={imageSrc}
                     alt={imageAlt}
                     width={800}
                     height={500}
                     className="object-cover w-full h-full transition-transform duration-300 ease-out group-hover:scale-110"
-                  />
+                  />)} */}
                 </div>
               </motion.div>
 
